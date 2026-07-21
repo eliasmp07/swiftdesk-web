@@ -15,6 +15,12 @@
     <meta name="apple-mobile-web-app-title" content="SwiftDesk">
 
     <style>
+        :root {
+            /* Overwritten by JS below with the real viewport height — CSS 100%/100vh
+               is unreliable in iOS standalone (installed) mode specifically, where
+               WebKit doesn't keep them in sync with the actual visible area. */
+            --app-height: 100%;
+        }
         html {
             margin: 0;
             padding: 0;
@@ -25,16 +31,14 @@
         }
         body {
             margin: 0;
-            height: 100%;
             width: 100%;
+            height: var(--app-height);
             overflow: hidden;
             background: #1A1F25;
             box-sizing: border-box;
             /* Respect the notch/Dynamic Island safe area — only non-zero when running
-               standalone (installed) on iOS, since that's the only mode where the
-               content draws under it at all. Bottom/sides are left alone: padding
-               there confused the canvas's resize handling and pushed the bottom nav
-               bar off-screen instead of just clearing the home-indicator gesture area. */
+               standalone on iOS, since that's the only mode where content draws
+               under it at all. */
             padding-top: env(safe-area-inset-top);
         }
         canvas {
@@ -43,6 +47,14 @@
             display: block;
         }
     </style>
+    <script>
+        function setAppHeight() {
+            document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
+        }
+        window.addEventListener('resize', setAppHeight);
+        window.addEventListener('orientationchange', () => setTimeout(setAppHeight, 100));
+        setAppHeight();
+    </script>
 </head>
 <body>
 <script src="webApp.js"></script>
