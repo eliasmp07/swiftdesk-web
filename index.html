@@ -21,20 +21,22 @@
                WebKit doesn't keep them in sync with the actual visible area. */
             --app-height: 100%;
         }
-        html {
+        html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
             width: 100%;
+            height: 100%;
             overflow: hidden;
             background: #1A1F25;
+            /* iOS Safari (especially standalone/installed PWAs) can still rubber-band
+               scroll the whole page even with overflow:hidden — position:fixed is the
+               reliable way to lock it in place so only Compose's own internal
+               scrolling (lists, etc.) responds to touch. */
+            position: fixed;
+            inset: 0;
         }
         body {
-            margin: 0;
-            width: 100%;
             height: var(--app-height);
-            overflow: hidden;
-            background: #1A1F25;
             box-sizing: border-box;
             /* Respect the notch/Dynamic Island safe area — only non-zero when running
                standalone on iOS, since that's the only mode where content draws
@@ -45,6 +47,7 @@
             width: 100% !important;
             height: 100% !important;
             display: block;
+            touch-action: none;
         }
     </style>
     <script>
