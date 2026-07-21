@@ -1,0 +1,16 @@
+version:0
+string|action_close|Q2xvc2U=
+string|action_download|RG93bmxvYWQ=
+string|action_open|T3Blbg==
+string|action_settings|U2V0dGluZ3M=
+string|app_name|RVJQUHJvcGFwZWw=
+string|dismiss_dialog|RGlzbWlzcyBkaWFsb2c=
+string|hide_password|SGlkZSBwYXNzd29yZA==
+string|label_download_complete|RG93bmxvYWQgY29tcGxldGU=
+string|label_number_page|UGFnZSAlMSRkIG9mICUyJGQ=
+string|label_preview_pdf|UHJldmlldyBQREY=
+string|msg_error_download_pdf|RXJyb3IgZG93bmxvYWRpbmcgUERG
+string|msg_error_load_pdf|RXJyb3IgbG9hZGluZyBQREY=
+string|msg_error_open_pdf|RXJyb3Igb3BlbmluZyBQREY=
+string|msg_success_download_pdf|UERGIGRvd25sb2FkZWQgc3VjY2Vzc2Z1bGx5
+string|show_password|U2hvdyBwYXNzd29yZA==
