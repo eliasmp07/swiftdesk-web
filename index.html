@@ -15,12 +15,28 @@
     <meta name="apple-mobile-web-app-title" content="SwiftDesk">
 
     <style>
-        html, body {
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
             overflow: hidden;
+            background: #1A1F25;
+        }
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: #1A1F25;
+            box-sizing: border-box;
+            /* Respect the notch/Dynamic Island/home-indicator safe areas — only
+               non-zero when running standalone (installed) on iOS, since that's
+               the only mode where the content draws under them at all. */
+            padding-top: env(safe-area-inset-top);
+            padding-right: env(safe-area-inset-right);
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left);
         }
         canvas {
             width: 100% !important;
