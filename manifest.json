@@ -1,0 +1,25 @@
+{
+  "name": "SwiftDesk",
+  "short_name": "SwiftDesk",
+  "description": "SwiftDesk - Helpdesk Propapel",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1A1F25",
+  "theme_color": "#1A1F25",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
